@@ -12,7 +12,7 @@ public class ClienteHttpCotacao {
     private final HttpClient cliente = HttpClient.newHttpClient();
 
     public RespostaCotacaoCompleta consultarTodasAsTaxas(){
-        String url = getUrlBase()  + "?apiKey=" + getApiKey();
+        String url = getUrlBase()  + "?apikey=" + getApiKey();
         HttpRequest requisicao = RequisicaoCotacao.construirRequisicao(url);
 
         try{

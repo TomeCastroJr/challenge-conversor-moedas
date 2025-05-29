@@ -9,6 +9,6 @@ public class ConfiguracoesApi {
     }
 
     public static String getUrlBase(){
-        return getUrlBase();
+        return URL_BASE;
     }
 }
