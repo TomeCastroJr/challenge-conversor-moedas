@@ -3,6 +3,7 @@ package br.com.conversormoedas;
 import br.com.conversormoedas.api.ClienteHttpCotacao;
 import br.com.conversormoedas.api.RequisicaoCotacao;
 import br.com.conversormoedas.api.RespostaCotacaoCompleta;
+import br.com.conversormoedas.historico.HistoricoConversao;
 import br.com.conversormoedas.utils.ConversorMoeda;
 
 import java.util.Locale;
@@ -61,6 +62,7 @@ public class Principal {
 
             double valor = scanner.nextDouble();
             double valorConvertido = ConversorMoeda.converter(moedaOrigem, moedaDestino, valor, taxas);
+            HistoricoConversao.registrar(moedaOrigem, moedaDestino, valor, valorConvertido);
 
             System.out.println("\n**********************************************************");
             System.out.printf("Conversão de %s para %s:\n", moedaOrigem, moedaDestino);
